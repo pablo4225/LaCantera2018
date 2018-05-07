@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+			html, body {
+				height: 100%;/* ajusta la altura de los elementos html y body al máximo de la pantalla */
+			}
+			div {
+				vertical-align: top; /* Alinea los divs arriba */
+			}
+			.contenedor {
+				height: 100%;
+				width: 100%; /* Ajusta el ancho al 100% */
+				background-color: yellow; /* Ajusta el color de fondo */
+			}
+			.barraMenu {
+				height: 80px;
+				background-color: red;
+			}
+			.botonMenu {
+				height: 100%;
+				width: 25%;
+				background-color: green;
+				display: inline-block; /* Hace que el div pueda compartir el renglón con otros elementos. Si no le especifico esta propiedad, el div no quiere compartir el renglón con nadie más */
+			}
+			.tituloMenu {
+				height: 100%;
+				width: 73%;
+				background: white;
+				display: inline-block;
+				text-align: center; /* Alineación del texto al centro */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contenedor">
+			<div class="barraMenu">
+				<div class="botonMenu">
+				</div>
+				<div class="tituloMenu">
+					<h1>La Cantera</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
