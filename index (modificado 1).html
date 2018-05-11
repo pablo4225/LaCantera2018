@@ -10,6 +10,9 @@
 			div {
 				vertical-align: top; /* Alinea los divs arriba */
 			}
+			* {
+				box-sizing: border-box;
+			}
 			.contenedor {
 				height: 100%;
 				width: 100%; /* Ajusta el ancho al 100% */	
@@ -21,8 +24,19 @@
 			.botonMenu {
 				height: 100%;
 				width: 25%;
-				color: white;
 				display: inline-block; /* Hace que el div pueda compartir el renglón con otros elementos. Si no le especifico esta propiedad, el div no quiere compartir el renglón con nadie más */
+			}
+			.interior-boton-menu {
+				display: table;
+				height: 100%;
+				width: 100%;
+			}
+			.icono-menu {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size: 1.8em;
+				color: white;
 			}
 			.tituloMenu {
 				height: 100%;
@@ -31,18 +45,95 @@
 				display: inline-block;
 				text-align: center; /* Alineación del texto al centro */
 			}
+			#menuLateral {
+				position: fixed;
+				width: 0px;
+				height: 100%;
+				transition: 0.5s;
+				overflow-x: hidden;
+				background-color: white;
+			}
+			#menuLateral ul {
+				list-style-type: none;
+				padding: 30px 0px;
+				margin: 0;
+			}
+			#menuLateral ul li {
+				display: block;
+				width: 100%;
+				padding: 0px;
+				text-align: center;
+				font-size: 1.2em;
+			}
+			#menuLateral ul li a {
+				color: rgb(28, 78, 158);
+				font-size: 1.2em;
+				font-family: arial;
+				text-decoration: none;
+				padding: 30px;
+				width: 100%;
+				display: block;
+			}
+			#menuLateral ul li a:hover {
+				background-color: rgb(28, 78, 158);
+			}
+			.cuerpo {
+				height: 100%;
+				width: 100%;
+				background-color: red;			
+			}
+			.fila {
+				height: 33%;
+				width: 100%;
+			}
+			#fila1 {
+				background-color: red;				
+			}
+			#fila2 {
+				background-color: blue;				
+			}
+			#fila3 {
+				background-color: yellow;				
+			}
 		</style>
 	</head>
 	<body>
 		<div class="contenedor">
+			<div id="menuLateral">
+				<ul>
+					<li><a href="">Link 1</a></li>
+					<li><a href="">Link 2</a></li>
+					<li onclick="cerrarMenu()"><a href="#">Cerrar</a></li>
+				</ul>
+			</div>
 			<div class="barraMenu">
 				<div class="botonMenu">
-					&#9776;
+					<div class="interior-boton-menu">
+						<div class="icono-menu" onclick="abrirMenu()">
+							&#9776;
+						</div>
+					</div>
 				</div>
 				<div class="tituloMenu">
 					<h1>La Cantera</h1>
 				</div>
 			</div>
+			<div class="cuerpo">
+				<div class="fila" id="fila1">
+				</div>
+				<div class="fila" id="fila2">
+				</div>
+				<div class="fila" id="fila3">
+				</div>
+			</div>			
 		</div>
+		<script>
+			function abrirMenu() {
+				document.getElementById('menuLateral').style.width = "300px";
+			}
+			function cerrarMenu() {
+				document.getElementById('menuLateral').style.width = "0px";
+			}
+		</script>
 	</body>
 </html>
